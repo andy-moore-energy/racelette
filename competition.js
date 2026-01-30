@@ -64,6 +64,10 @@ function showPage(pageName) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', async () => {
+    // Check Firebase connection
+    console.log('Firebase initialized:', typeof firebase !== 'undefined');
+    console.log('Firestore available:', typeof db !== 'undefined');
+
     // Set competition date display
     document.getElementById('competition-date').textContent = getTodayDisplayDate();
 
@@ -189,16 +193,21 @@ async function handleRegistration() {
 
 // Create player in Firestore
 async function createPlayer() {
+    console.log('Creating player, competitionId:', CompetitionState.competitionId);
+
     const competitionRef = db.collection('competitions').doc(CompetitionState.competitionId);
 
     // Ensure competition document exists
+    console.log('Creating competition document...');
     await competitionRef.set({
         date: new Date().toISOString().split('T')[0],
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         status: 'active'
     }, { merge: true });
+    console.log('Competition document created');
 
     // Create player
+    console.log('Creating player document...');
     const playerRef = await competitionRef.collection('players').add({
         name: CompetitionState.playerName,
         icon: CompetitionState.playerIcon,
@@ -208,6 +217,7 @@ async function createPlayer() {
         lastUpdatedAt: firebase.firestore.FieldValue.serverTimestamp(),
         isActive: true
     });
+    console.log('Player created with ID:', playerRef.id);
 
     CompetitionState.playerId = playerRef.id;
 }
