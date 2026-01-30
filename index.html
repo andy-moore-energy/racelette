@@ -9,30 +9,96 @@
 <body>
     <!-- Loading Page -->
     <section id="loading-page" class="page active">
-        <pre class="title">
-╔═══════════════════════════╗
-║                           ║
-║       YUM    YUM          ║
-║                           ║
-╚═══════════════════════════╝
+        <pre class="olympic-rings">
+       _____   _____   _____
+      /     \ /     \ /     \
+     (  <span class="ring-blue">BLUE</span> X <span class="ring-black">BLACK</span> X <span class="ring-red">RED</span>  )
+      \_____/ \_____/ \_____/
+         /  \   /  \
+        ( <span class="ring-yellow">YLW</span> ) ( <span class="ring-green">GRN</span> )
+         \___/ \___/
         </pre>
-        <button id="start-btn">[ CHOMP ]</button>
+
+        <pre class="title">
+╔═══════════════════════════════════╗
+║    *  WINTER Olympics  *          ║
+║                                   ║
+║        YUM    YUM                 ║
+║                                   ║
+║      RACLETTE CHALLENGE           ║
+╚═══════════════════════════════════╝
+        </pre>
+
+        <div class="winter-scene">
+            <pre class="skier skier-left">
+    \\
+   <(o)>
+    /|\\
+   / | \\
+    </pre>
+            <button id="start-btn">[ CHOMP ]</button>
+            <pre class="skier skier-right">
+      //
+    <(o)>
+    //|\\
+   // | \\
+            </pre>
+        </div>
+
+        <pre class="bobsled">
+  BOBSLED TEAM
+    ___________
+  _/  o  o  o  \_=====>
+ (_____________)
+   oo       oo
+        </pre>
+
+        <pre class="winter-sports">
+  ~~~ WINTER SPORTS ~~~
+
+   FIGURE       SKI         ICE
+   SKATER      JUMP       HOCKEY
+     \o        ,@/         \o/
+      |\       /|           |
+     _/\_     _/|_         _/\_
+    </pre>
     </section>
 
     <!-- Game Page -->
     <section id="game-page" class="page">
-        <pre class="grill">
+        <div class="game-layout">
+            <pre class="side-art side-left">
+ DOWNHILL
+    \\
+   <(o)>
+    /|\\
+   / | \\
+  /    \\
+ /  ^^  \\
+/~~~~~~~~\\
+
+  SLALOM
+    \\
+   (o)>
+   /|
+  / |
+ |  |
+ |  |
+            </pre>
+
+            <div class="game-center">
+                <pre class="grill">
   ╔═══════════════════════╗
   ║  ▓▓▓▓ HEATING ▓▓▓▓   ║
   ╠═══════════════════════╣
   ║     [RACLETTE]        ║
   ║       GRILL           ║
   ╚═══════════════════════╝
-        </pre>
+                </pre>
 
-        <div class="plate-area">
-            <pre id="tray-stack"></pre>
-            <pre class="plate">
+                <div class="plate-area">
+                    <pre id="tray-stack"></pre>
+                    <pre class="plate">
       ___________
     /             \
    /               \
@@ -40,14 +106,37 @@
   |                 |
    \               /
     \_____________/
+                    </pre>
+                </div>
+
+                <div class="counter">TRAYS: <span id="tray-count">0</span></div>
+
+                <div class="controls">
+                    <button id="chomp-btn">[ CHOMP ]</button>
+                    <button id="done-btn">[ I'M ALL DONE ]</button>
+                </div>
+            </div>
+
+            <pre class="side-art side-right">
+ LUGE
+  ______
+ / o  o \\====>
+(________)
+  oo  oo
+
+ CURLING
+    o
+   /|\\
+   / \\
+  (   )
+   ~~~
+
+SNOWBOARD
+    \\o/
+     |
+   [===]
+    / \\
             </pre>
-        </div>
-
-        <div class="counter">TRAYS: <span id="tray-count">0</span></div>
-
-        <div class="controls">
-            <button id="chomp-btn">[ CHOMP ]</button>
-            <button id="done-btn">[ I'M ALL DONE ]</button>
         </div>
     </section>
 
@@ -55,18 +144,49 @@
     <section id="celebration-page" class="page">
         <div id="confetti-container"></div>
         <pre class="celebration-art">
-  *  *  *  *  *  *  *  *  *
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+~                                   ~
+*    OLYMPIC RACLETTE CHAMPION!!!   *
+~                                   ~
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
-      CONGRATULATIONS!!!
+            GOLD MEDAL
+              _____
+             /     \\
+            |  ^^^  |
+            | GOLD  |
+            |  #1   |
+             \\_____/
+                |
+              \\|||/
 
-  *  *  *  *  *  *  *  *  *
+          THE PODIUM
+      _______________
+     |       |       |
+     |  YOU  |       |
+   __|   1   |___2___|___3___
+  |  |_______|   |       |   |
+  |    \\o/      |       |   |
+  |     |       \\o      o/  |
+  |____/_\\______|\\_____/|__|
 
-       \o/  YOU DID IT!  \o/
-        |                 |
-       / \               / \
+      *  *  *  *  *  *  *
+   \\o/  CHAMPION!  \\o/  \\o/
+    |                |    |
+   / \\              / \\  / \\
         </pre>
-        <div class="final-count">YOU ATE <span id="final-tray-count">0</span> RACLETTES!</div>
-        <button id="play-again-btn">[ PLAY AGAIN ]</button>
+
+        <pre class="mini-rings">
+   _   _   _
+  (_) (_) (_)
+    (_) (_)
+        </pre>
+
+        <div class="final-count">
+            OFFICIAL RESULT: <span id="final-tray-count">0</span> RACLETTES!
+        </div>
+        <div class="medal-ceremony">~ MEDAL CEREMONY COMPLETE ~</div>
+        <button id="play-again-btn">[ COMPETE AGAIN ]</button>
     </section>
 
     <script src="game.js"></script>
