@@ -1,0 +1,171 @@
+/* 90s Retro ASCII Aesthetic */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Page visibility */
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* Retro button styling */
+button {
+    background: #c0c0c0;
+    color: #000;
+    border: 3px outset #fff;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    margin: 10px;
+    cursor: pointer;
+    min-height: 48px;
+}
+
+button:hover {
+    background: #d0d0d0;
+}
+
+button:active {
+    border-style: inset;
+    background: #a0a0a0;
+}
+
+/* Loading page */
+#loading-page .title {
+    color: #ffff00;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+/* Game page */
+.grill {
+    color: #ff6600;
+    margin-bottom: 20px;
+}
+
+.plate-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#tray-stack {
+    color: #ffcc00;
+    min-height: 20px;
+}
+
+.plate {
+    color: #aaaaaa;
+}
+
+.counter {
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin: 20px 0;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Celebration page */
+#celebration-page {
+    position: relative;
+    overflow: hidden;
+}
+
+.celebration-art {
+    color: #ff00ff;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.final-count {
+    font-size: 1.5rem;
+    color: #00ff00;
+    margin: 20px 0;
+}
+
+/* Confetti */
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: confetti-fall 3s linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Blinking effect for emphasis */
+.blink {
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 400px) {
+    pre {
+        font-size: 0.7rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+
+    .counter, .final-count {
+        font-size: 1.2rem;
+    }
+}

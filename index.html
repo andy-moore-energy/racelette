@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raclette - Yum Yum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Page -->
+    <section id="loading-page" class="page active">
+        <pre class="title">
+╔═══════════════════════════╗
+║                           ║
+║       YUM    YUM          ║
+║                           ║
+╚═══════════════════════════╝
+        </pre>
+        <button id="start-btn">[ CHOMP ]</button>
+    </section>
+
+    <!-- Game Page -->
+    <section id="game-page" class="page">
+        <pre class="grill">
+  ╔═══════════════════════╗
+  ║  ▓▓▓▓ HEATING ▓▓▓▓   ║
+  ╠═══════════════════════╣
+  ║     [RACLETTE]        ║
+  ║       GRILL           ║
+  ╚═══════════════════════╝
+        </pre>
+
+        <div class="plate-area">
+            <pre id="tray-stack"></pre>
+            <pre class="plate">
+      ___________
+    /             \
+   /               \
+  |                 |
+  |                 |
+   \               /
+    \_____________/
+            </pre>
+        </div>
+
+        <div class="counter">TRAYS: <span id="tray-count">0</span></div>
+
+        <div class="controls">
+            <button id="chomp-btn">[ CHOMP ]</button>
+            <button id="done-btn">[ I'M ALL DONE ]</button>
+        </div>
+    </section>
+
+    <!-- Celebration Page -->
+    <section id="celebration-page" class="page">
+        <div id="confetti-container"></div>
+        <pre class="celebration-art">
+  *  *  *  *  *  *  *  *  *
+
+      CONGRATULATIONS!!!
+
+  *  *  *  *  *  *  *  *  *
+
+       \o/  YOU DID IT!  \o/
+        |                 |
+       / \               / \
+        </pre>
+        <div class="final-count">YOU ATE <span id="final-tray-count">0</span> RACLETTES!</div>
+        <button id="play-again-btn">[ PLAY AGAIN ]</button>
+    </section>
+
+    <script src="game.js"></script>
+</body>
+</html>
