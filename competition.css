@@ -1,0 +1,334 @@
+/* Competition-specific styles */
+
+/* Registration Page */
+.competition-date {
+    color: #00ffff;
+    font-size: 1rem;
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.input-label {
+    color: #00ff00;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+#player-name {
+    background: #001100;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    text-align: center;
+    width: 250px;
+    outline: none;
+}
+
+#player-name:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+#player-name::placeholder {
+    color: #006600;
+}
+
+/* Icon Picker */
+.icon-picker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+    max-width: 500px;
+}
+
+.icon-option {
+    border: 2px solid #00ff00;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+    background: #001100;
+    transition: all 0.2s;
+}
+
+.icon-option:hover {
+    border-color: #00ffff;
+    background: #002200;
+}
+
+.icon-option.selected {
+    border-color: #ffd700;
+    background: #332200;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+.icon-option pre {
+    color: #00ffff;
+    font-size: 0.65rem;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.icon-option.selected pre {
+    color: #ffd700;
+}
+
+.icon-label {
+    display: block;
+    color: #aaaaaa;
+    font-size: 0.6rem;
+    margin-top: 5px;
+}
+
+.icon-option.selected .icon-label {
+    color: #ffd700;
+}
+
+/* Solo link */
+.solo-link {
+    margin-top: 20px;
+}
+
+.solo-link a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.solo-link a:hover {
+    color: #00ff00;
+}
+
+/* Leader Display */
+.leader-display {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border: 2px solid #ffd700;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffd700;
+    font-size: 0.75rem;
+    z-index: 100;
+    text-align: center;
+    min-width: 120px;
+}
+
+.leader-header {
+    font-size: 0.65rem;
+    color: #aaaaaa;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.leader-icon {
+    color: #00ffff;
+    font-size: 0.5rem;
+    line-height: 1.1;
+    margin: 5px 0;
+}
+
+.leader-name {
+    color: #ffd700;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.leader-score {
+    color: #00ff00;
+    font-size: 0.7rem;
+    margin-top: 5px;
+}
+
+/* Your info display */
+.your-info {
+    color: #888888;
+    font-size: 0.8rem;
+    margin: 10px 0;
+}
+
+/* Ceremony Page */
+.ceremony-header {
+    color: #ffd700;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Podium */
+.podium-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.podium-place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.podium-icon {
+    color: #00ffff;
+    font-size: 0.55rem;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    min-height: 50px;
+}
+
+.podium-name {
+    color: #ffffff;
+    font-size: 0.75rem;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.podium-score {
+    color: #00ff00;
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+}
+
+.podium-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.podium-block.gold {
+    background: linear-gradient(180deg, #ffd700 0%, #b8860b 100%);
+    color: #000;
+    height: 100px;
+    border: 2px solid #ffd700;
+}
+
+.podium-block.silver {
+    background: linear-gradient(180deg, #c0c0c0 0%, #808080 100%);
+    color: #000;
+    height: 70px;
+    border: 2px solid #c0c0c0;
+}
+
+.podium-block.bronze {
+    background: linear-gradient(180deg, #cd7f32 0%, #8b4513 100%);
+    color: #000;
+    height: 50px;
+    border: 2px solid #cd7f32;
+}
+
+.your-result {
+    color: #00ff00;
+    font-size: 1.3rem;
+    margin: 20px 0;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.ceremony-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: " ...";
+    animation: dots 1s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: " ."; }
+    40% { content: " .."; }
+    60%, 100% { content: " ..."; }
+}
+
+/* Error message */
+.error-message {
+    color: #ff4444;
+    background: #330000;
+    border: 1px solid #ff4444;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .icon-picker {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .icon-option pre {
+        font-size: 0.55rem;
+    }
+
+    .leader-display {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .podium-block {
+        width: 60px;
+    }
+
+    .podium-block.gold { height: 80px; }
+    .podium-block.silver { height: 55px; }
+    .podium-block.bronze { height: 40px; }
+
+    .podium-name {
+        font-size: 0.65rem;
+        max-width: 60px;
+    }
+
+    .podium-icon {
+        font-size: 0.45rem;
+    }
+
+    #player-name {
+        width: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .icon-picker {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ceremony-header {
+        font-size: 0.65rem;
+    }
+
+    .podium-block {
+        width: 50px;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raclette - Daily Competition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="competition.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <!-- Registration Page -->
+    <section id="registration-page" class="page active">
+        <pre class="olympic-rings">
+       _____   _____   _____
+      /     \ /     \ /     \
+     (  <span class="ring-blue">BLUE</span> X <span class="ring-black">BLACK</span> X <span class="ring-red">RED</span>  )
+      \_____/ \_____/ \_____/
+         /  \   /  \
+        ( <span class="ring-yellow">YLW</span> ) ( <span class="ring-green">GRN</span> )
+         \___/ \___/
+        </pre>
+
+        <pre class="title">
+╔═══════════════════════════════════╗
+║    *  DAILY COMPETITION  *        ║
+║                                   ║
+║      RACLETTE CHALLENGE           ║
+║                                   ║
+║   Compete against the world!      ║
+╚═══════════════════════════════════╝
+        </pre>
+
+        <div class="competition-date">
+            TODAY: <span id="competition-date"></span>
+        </div>
+
+        <div class="registration-form">
+            <label class="input-label">ENTER YOUR NAME:</label>
+            <input type="text" id="player-name" maxlength="20" placeholder="Champion">
+
+            <label class="input-label">CHOOSE YOUR ATHLETE:</label>
+            <div class="icon-picker" id="icon-picker">
+                <div class="icon-option" data-icon="downhill-skier" tabindex="0">
+                    <pre>    \
+   &lt;(o)&gt;
+    /|\
+   / | \</pre>
+                    <span class="icon-label">DOWNHILL</span>
+                </div>
+                <div class="icon-option" data-icon="figure-skater" tabindex="0">
+                    <pre>  \o
+   |\
+  _/\_</pre>
+                    <span class="icon-label">SKATER</span>
+                </div>
+                <div class="icon-option" data-icon="ski-jumper" tabindex="0">
+                    <pre>  ,@/
+  /|
+ _/|_</pre>
+                    <span class="icon-label">SKI JUMP</span>
+                </div>
+                <div class="icon-option" data-icon="hockey-player" tabindex="0">
+                    <pre>  \o/
+   |
+  _/\_</pre>
+                    <span class="icon-label">HOCKEY</span>
+                </div>
+                <div class="icon-option" data-icon="bobsled" tabindex="0">
+                    <pre> _____
+/o o o\=&gt;
+(______)</pre>
+                    <span class="icon-label">BOBSLED</span>
+                </div>
+                <div class="icon-option" data-icon="snowboarder" tabindex="0">
+                    <pre>  \o/
+   |
+ [===]</pre>
+                    <span class="icon-label">SNOWBOARD</span>
+                </div>
+                <div class="icon-option" data-icon="luge" tabindex="0">
+                    <pre> ____
+/o  o\=&gt;
+(____)</pre>
+                    <span class="icon-label">LUGE</span>
+                </div>
+                <div class="icon-option" data-icon="curler" tabindex="0">
+                    <pre>   o
+  /|\
+  / \
+ (   )</pre>
+                    <span class="icon-label">CURLING</span>
+                </div>
+            </div>
+
+            <button id="chow-down-btn">[ CHOW DOWN ]</button>
+        </div>
+
+        <div class="solo-link">
+            <a href="index.html">or play solo &gt;&gt;</a>
+        </div>
+    </section>
+
+    <!-- Game Page -->
+    <section id="game-page" class="page">
+        <div class="leader-display" id="leader-display">
+            <div class="leader-header">CURRENT LEADER</div>
+            <pre id="leader-icon" class="leader-icon">---</pre>
+            <div class="leader-name" id="leader-name">---</div>
+            <div class="leader-score">SCORE: <span id="leader-score">0</span></div>
+        </div>
+
+        <div class="game-layout">
+            <pre class="side-art side-left">
+ DOWNHILL
+    \
+   &lt;(o)&gt;
+    /|\
+   / | \
+  /    \
+ /  ^^  \
+/~~~~~~~~\
+
+  SLALOM
+    \
+   (o)&gt;
+   /|
+  / |
+ |  |
+ |  |
+            </pre>
+
+            <div class="game-center">
+                <pre class="grill">
+  ╔═══════════════════════╗
+  ║  ▓▓▓▓ HEATING ▓▓▓▓   ║
+  ╠═══════════════════════╣
+  ║     [RACLETTE]        ║
+  ║       GRILL           ║
+  ╚═══════════════════════╝
+                </pre>
+
+                <div class="plate-area">
+                    <pre id="tray-stack"></pre>
+                    <pre class="plate">
+      ___________
+    /             \
+   /               \
+  |                 |
+  |                 |
+   \               /
+    \_____________/
+                    </pre>
+                </div>
+
+                <div class="counter">TRAYS: <span id="tray-count">0</span></div>
+
+                <div class="your-info">
+                    <span id="your-name"></span> | <span id="your-icon-label"></span>
+                </div>
+
+                <div class="controls">
+                    <button id="chomp-btn">[ CHOMP ]</button>
+                    <button id="done-btn">[ I'M ALL DONE ]</button>
+                </div>
+            </div>
+
+            <pre class="side-art side-right">
+ LUGE
+  ______
+ / o  o \====&gt;
+(________)
+  oo  oo
+
+ CURLING
+    o
+   /|\
+   / \
+  (   )
+   ~~~
+
+SNOWBOARD
+    \o/
+     |
+   [===]
+    / \
+            </pre>
+        </div>
+    </section>
+
+    <!-- Winners Ceremony Page -->
+    <section id="ceremony-page" class="page">
+        <div id="confetti-container"></div>
+
+        <pre class="ceremony-header">
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+~                                   ~
+*     TODAY'S TOP RACLETTEURS!      *
+~                                   ~
+*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+        </pre>
+
+        <div class="podium-container">
+            <div class="podium-place second">
+                <pre id="second-icon" class="podium-icon"></pre>
+                <div id="second-name" class="podium-name">---</div>
+                <div id="second-score" class="podium-score">0</div>
+                <div class="podium-block silver">
+                    <span>2</span>
+                </div>
+            </div>
+            <div class="podium-place first">
+                <pre id="first-icon" class="podium-icon"></pre>
+                <div id="first-name" class="podium-name">---</div>
+                <div id="first-score" class="podium-score">0</div>
+                <div class="podium-block gold">
+                    <span>1</span>
+                </div>
+            </div>
+            <div class="podium-place third">
+                <pre id="third-icon" class="podium-icon"></pre>
+                <div id="third-name" class="podium-name">---</div>
+                <div id="third-score" class="podium-score">0</div>
+                <div class="podium-block bronze">
+                    <span>3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="your-result">
+            YOUR RESULT: <span id="final-score">0</span> RACLETTES!
+        </div>
+
+        <pre class="mini-rings">
+   _   _   _
+  (_) (_) (_)
+    (_) (_)
+        </pre>
+
+        <div class="medal-ceremony blink">~ CEREMONY COMPLETE ~</div>
+
+        <div class="ceremony-buttons">
+            <button id="restart-btn">[ RESTART (NEW SCORE) ]</button>
+            <button id="back-to-registration-btn">[ CHANGE ATHLETE ]</button>
+        </div>
+
+        <div class="solo-link">
+            <a href="index.html">play solo &gt;&gt;</a>
+        </div>
+    </section>
+
+    <script src="firebase-config.js"></script>
+    <script src="competition.js"></script>
+</body>
+</html>
