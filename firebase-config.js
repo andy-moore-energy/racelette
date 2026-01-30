@@ -8,12 +8,12 @@
 // 5. Replace the placeholder values below with your config
 
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyCWeaszDYMs3D0JwO4Q_KqGeLg2zRSgELA",
+    authDomain: "racletteolympics.firebaseapp.com",
+    projectId: "racletteolympics",
+    storageBucket: "racletteolympics.firebasestorage.app",
+    messagingSenderId: "793512865833",
+    appId: "1:793512865833:web:fa6e1d2d6fd2f1cff4ec38"
 };
 
 // Initialize Firebase
