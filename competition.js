@@ -180,7 +180,7 @@ async function handleRegistration() {
         showPage('game');
     } catch (error) {
         console.error('Registration error:', error);
-        alert('Failed to register. Please try again.');
+        alert('Failed to register: ' + error.message + '\n\nMake sure Firestore is enabled in Firebase Console.');
     } finally {
         btn.disabled = false;
         btn.textContent = '[ CHOW DOWN ]';
